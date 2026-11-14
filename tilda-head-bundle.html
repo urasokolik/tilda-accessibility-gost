@@ -1,0 +1,813 @@
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '237254068312462');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=237254068312462&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<meta name="facebook-domain-verification" content="0js894236szvozh0nkcmvxkc2fiz16" />
+
+<!-- ==========================================================================
+     Версия для слабовидящих по ГОСТ Р 52872-2019 для Tilda
+     Полная совместимость со стандартными блоками и Zero Blocks (T396)
+     ========================================================================== -->
+<style id="bvi-styles">
+  /* Кнопка вызова панели доступности */
+  .bvi-trigger-btn {
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    z-index: 9999990;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #111111;
+    color: #ffffff !important;
+    border: 2px solid #ffffff;
+    border-radius: 24px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none !important;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .bvi-trigger-btn:hover {
+    background: #0044bb;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+  }
+  .bvi-trigger-btn:focus {
+    outline: 3px solid #ffcc00 !important;
+    outline-offset: 2px;
+  }
+  .bvi-trigger-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+    flex-shrink: 0;
+  }
+  @media (max-width: 600px) {
+    .bvi-trigger-btn {
+      top: 8px;
+      right: 8px;
+      padding: 6px 10px;
+      font-size: 11px;
+      gap: 5px;
+    }
+  }
+
+  html.bvi-active .bvi-trigger-btn {
+    display: none !important;
+  }
+
+  /* Панель управления доступностью */
+  #bvi-panel {
+    display: none;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f4f4f4;
+    color: #111111;
+    border-bottom: 3px solid #222222;
+    z-index: 9999999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    padding: 8px 14px;
+    line-height: 1.3;
+  }
+  html.bvi-active #bvi-panel {
+    display: block !important;
+  }
+  .bvi-panel-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 12px;
+  }
+  .bvi-group {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px 8px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .bvi-label {
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 4px;
+    color: #222222;
+  }
+  .bvi-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    border: 2px solid #777777;
+    border-radius: 4px;
+    background: #ffffff;
+    color: #111111;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    min-height: 28px;
+    transition: all 0.15s ease;
+  }
+  .bvi-btn:hover {
+    border-color: #000000;
+    background: #e9e9e9;
+  }
+  .bvi-btn:focus {
+    outline: 3px solid #0055ff !important;
+    outline-offset: 1px;
+  }
+  .bvi-btn.bvi-active {
+    background: #111111 !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+    font-weight: 700;
+  }
+  .bvi-btn-close {
+    background: #b30000 !important;
+    color: #ffffff !important;
+    border-color: #800000 !important;
+    font-weight: 700;
+  }
+  .bvi-btn-close:hover {
+    background: #800000 !important;
+  }
+
+  /* Цветовые схемы по ГОСТ */
+  .bvi-theme-btn {
+    font-weight: 700;
+    padding: 2px 8px;
+    min-width: 32px;
+  }
+  .bvi-theme-btn-white { background: #ffffff !important; color: #000000 !important; border-color: #000000 !important; }
+  .bvi-theme-btn-black { background: #000000 !important; color: #ffffff !important; border-color: #ffffff !important; }
+  .bvi-theme-btn-blue  { background: #cbe2f8 !important; color: #063462 !important; border-color: #063462 !important; }
+  .bvi-theme-btn-beige { background: #f7f3e8 !important; color: #4d3b2b !important; border-color: #4d3b2b !important; }
+  .bvi-theme-btn-yellow{ background: #ffff99 !important; color: #000000 !important; border-color: #000000 !important; }
+  .bvi-theme-btn.bvi-active {
+    outline: 3px solid #0044bb !important;
+    outline-offset: 2px;
+  }
+
+  /* Озвучивание */
+  #bvi-speech-indicator {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 10000000;
+    background: #0044bb;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+    font-size: 14px;
+    font-weight: bold;
+    align-items: center;
+    gap: 12px;
+  }
+  #bvi-speech-indicator button {
+    background: #ffdd00;
+    color: #000000;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .bvi-speech-highlight {
+    background-color: #ffff55 !important;
+    color: #000000 !important;
+    outline: 3px solid #ff9900 !important;
+  }
+
+  /* Отключение анимаций */
+  html.bvi-active, html.bvi-active * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Пропорциональное масштабирование страницы */
+  html.bvi-active.bvi-font-normal .t-records {
+    zoom: 1;
+  }
+  html.bvi-active.bvi-font-medium .t-records {
+    zoom: 1.18;
+  }
+  html.bvi-active.bvi-font-large .t-records {
+    zoom: 1.36;
+  }
+
+  /* Zero Blocks: убираем только декоративные картинки подложки и фильтры */
+  html.bvi-active .t396__carrier {
+    background-image: none !important;
+  }
+  html.bvi-active .t396__filter {
+    display: none !important;
+  }
+
+  /* Интерлиньяж, кернинг и шрифт ТОЛЬКО для обычных блоков (не Zero Block!),
+     чтобы в Zero Block с абсолютными координатами текст не наезжал на соседние элементы! */
+  html.bvi-active.bvi-family-sans .t-rec:not([data-record-type="396"]),
+  html.bvi-active.bvi-family-sans .t-rec:not([data-record-type="396"]) * {
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+  html.bvi-active.bvi-family-serif .t-rec:not([data-record-type="396"]),
+  html.bvi-active.bvi-family-serif .t-rec:not([data-record-type="396"]) * {
+    font-family: "Times New Roman", Times, Georgia, serif !important;
+  }
+
+  html.bvi-active.bvi-spacing-normal .t-rec:not([data-record-type="396"]) * { letter-spacing: normal !important; }
+  html.bvi-active.bvi-spacing-medium .t-rec:not([data-record-type="396"]) * { letter-spacing: 1px !important; }
+  html.bvi-active.bvi-spacing-large .t-rec:not([data-record-type="396"]) *  { letter-spacing: 2px !important; }
+
+  html.bvi-active.bvi-line-normal .t-rec:not([data-record-type="396"]) p,
+  html.bvi-active.bvi-line-normal .t-rec:not([data-record-type="396"]) .t-descr,
+  html.bvi-active.bvi-line-normal .t-rec:not([data-record-type="396"]) .t-text,
+  html.bvi-active.bvi-line-normal .t-rec:not([data-record-type="396"]) li { line-height: 1.4 !important; }
+
+  html.bvi-active.bvi-line-medium .t-rec:not([data-record-type="396"]) p,
+  html.bvi-active.bvi-line-medium .t-rec:not([data-record-type="396"]) .t-descr,
+  html.bvi-active.bvi-line-medium .t-rec:not([data-record-type="396"]) .t-text,
+  html.bvi-active.bvi-line-medium .t-rec:not([data-record-type="396"]) li { line-height: 1.7 !important; }
+
+  html.bvi-active.bvi-line-large .t-rec:not([data-record-type="396"]) p,
+  html.bvi-active.bvi-line-large .t-rec:not([data-record-type="396"]) .t-descr,
+  html.bvi-active.bvi-line-large .t-rec:not([data-record-type="396"]) .t-text,
+  html.bvi-active.bvi-line-large .t-rec:not([data-record-type="396"]) li { line-height: 2.0 !important; }
+
+  /* Изображения */
+  html.bvi-active.bvi-images-on img,
+  html.bvi-active.bvi-images-on .t-bgimg,
+  html.bvi-active.bvi-images-on .tn-atom__img {
+    filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  html.bvi-active.bvi-images-grayscale img,
+  html.bvi-active.bvi-images-grayscale .t-bgimg,
+  html.bvi-active.bvi-images-grayscale .tn-atom__img {
+    filter: grayscale(100%) contrast(120%) !important;
+  }
+  html.bvi-active.bvi-images-off img:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-images-off .t-bgimg,
+  html.bvi-active.bvi-images-off .tn-atom__img {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* ==========================================================================
+     5 ЦВЕТОВЫХ СХЕМ ПО ГОСТ Р 52872-2019
+     Каждая секция получает сплошной цвет фона, исключая наложение!
+     ========================================================================== */
+
+  /* Схема 1: Черным по белому (white) */
+  html.bvi-active.bvi-theme-white,
+  html.bvi-active.bvi-theme-white body,
+  html.bvi-active.bvi-theme-white .t-records,
+  html.bvi-active.bvi-theme-white .t-rec,
+  html.bvi-active.bvi-theme-white .t396__artboard,
+  html.bvi-active.bvi-theme-white .t-container {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+  }
+  html.bvi-active.bvi-theme-white .tn-atom,
+  html.bvi-active.bvi-theme-white .t-title,
+  html.bvi-active.bvi-theme-white .t-descr,
+  html.bvi-active.bvi-theme-white .t-text,
+  html.bvi-active.bvi-theme-white .t-name,
+  html.bvi-active.bvi-theme-white h1,
+  html.bvi-active.bvi-theme-white h2,
+  html.bvi-active.bvi-theme-white h3,
+  html.bvi-active.bvi-theme-white h4,
+  html.bvi-active.bvi-theme-white h5,
+  html.bvi-active.bvi-theme-white h6,
+  html.bvi-active.bvi-theme-white p,
+  html.bvi-active.bvi-theme-white li,
+  html.bvi-active.bvi-theme-white td,
+  html.bvi-active.bvi-theme-white th {
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+  html.bvi-active.bvi-theme-white a:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    color: #0000cc !important;
+    text-decoration: underline !important;
+  }
+  html.bvi-active.bvi-theme-white .t-btn,
+  html.bvi-active.bvi-theme-white a.tn-atom,
+  html.bvi-active.bvi-theme-white .tn-atom__btn,
+  html.bvi-active.bvi-theme-white button:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-white input:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-white select:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+  }
+
+  /* Схема 2: Белым по черному (black) */
+  html.bvi-active.bvi-theme-black,
+  html.bvi-active.bvi-theme-black body,
+  html.bvi-active.bvi-theme-black .t-records,
+  html.bvi-active.bvi-theme-black .t-rec,
+  html.bvi-active.bvi-theme-black .t396__artboard,
+  html.bvi-active.bvi-theme-black .t-container {
+    background-color: #000000 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+  }
+  html.bvi-active.bvi-theme-black .tn-atom,
+  html.bvi-active.bvi-theme-black .t-title,
+  html.bvi-active.bvi-theme-black .t-descr,
+  html.bvi-active.bvi-theme-black .t-text,
+  html.bvi-active.bvi-theme-black .t-name,
+  html.bvi-active.bvi-theme-black h1,
+  html.bvi-active.bvi-theme-black h2,
+  html.bvi-active.bvi-theme-black h3,
+  html.bvi-active.bvi-theme-black h4,
+  html.bvi-active.bvi-theme-black h5,
+  html.bvi-active.bvi-theme-black h6,
+  html.bvi-active.bvi-theme-black p,
+  html.bvi-active.bvi-theme-black li,
+  html.bvi-active.bvi-theme-black td,
+  html.bvi-active.bvi-theme-black th {
+    color: #ffffff !important;
+    text-shadow: none !important;
+  }
+  html.bvi-active.bvi-theme-black a:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    color: #ffff00 !important;
+    text-decoration: underline !important;
+  }
+  html.bvi-active.bvi-theme-black .t-btn,
+  html.bvi-active.bvi-theme-black a.tn-atom,
+  html.bvi-active.bvi-theme-black .tn-atom__btn,
+  html.bvi-active.bvi-theme-black button:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-black input:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-black select:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  /* Схема 3: Темно-синим по голубому (blue) */
+  html.bvi-active.bvi-theme-blue,
+  html.bvi-active.bvi-theme-blue body,
+  html.bvi-active.bvi-theme-blue .t-records,
+  html.bvi-active.bvi-theme-blue .t-rec,
+  html.bvi-active.bvi-theme-blue .t396__artboard,
+  html.bvi-active.bvi-theme-blue .t-container {
+    background-color: #cbe2f8 !important;
+    background-image: none !important;
+    color: #063462 !important;
+  }
+  html.bvi-active.bvi-theme-blue .tn-atom,
+  html.bvi-active.bvi-theme-blue .t-title,
+  html.bvi-active.bvi-theme-blue .t-descr,
+  html.bvi-active.bvi-theme-blue .t-text,
+  html.bvi-active.bvi-theme-blue .t-name,
+  html.bvi-active.bvi-theme-blue h1,
+  html.bvi-active.bvi-theme-blue h2,
+  html.bvi-active.bvi-theme-blue h3,
+  html.bvi-active.bvi-theme-blue h4,
+  html.bvi-active.bvi-theme-blue h5,
+  html.bvi-active.bvi-theme-blue h6,
+  html.bvi-active.bvi-theme-blue p,
+  html.bvi-active.bvi-theme-blue li,
+  html.bvi-active.bvi-theme-blue td,
+  html.bvi-active.bvi-theme-blue th {
+    color: #063462 !important;
+    text-shadow: none !important;
+  }
+  html.bvi-active.bvi-theme-blue a:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    color: #001f3f !important;
+    text-decoration: underline !important;
+  }
+  html.bvi-active.bvi-theme-blue .t-btn,
+  html.bvi-active.bvi-theme-blue a.tn-atom,
+  html.bvi-active.bvi-theme-blue .tn-atom__btn,
+  html.bvi-active.bvi-theme-blue button:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-blue input:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-blue select:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    background-color: #cbe2f8 !important;
+    color: #063462 !important;
+    border: 2px solid #063462 !important;
+    box-shadow: none !important;
+  }
+
+  /* Схема 4: Коричневым по бежевому (beige) */
+  html.bvi-active.bvi-theme-beige,
+  html.bvi-active.bvi-theme-beige body,
+  html.bvi-active.bvi-theme-beige .t-records,
+  html.bvi-active.bvi-theme-beige .t-rec,
+  html.bvi-active.bvi-theme-beige .t396__artboard,
+  html.bvi-active.bvi-theme-beige .t-container {
+    background-color: #f7f3e8 !important;
+    background-image: none !important;
+    color: #4d3b2b !important;
+  }
+  html.bvi-active.bvi-theme-beige .tn-atom,
+  html.bvi-active.bvi-theme-beige .t-title,
+  html.bvi-active.bvi-theme-beige .t-descr,
+  html.bvi-active.bvi-theme-beige .t-text,
+  html.bvi-active.bvi-theme-beige .t-name,
+  html.bvi-active.bvi-theme-beige h1,
+  html.bvi-active.bvi-theme-beige h2,
+  html.bvi-active.bvi-theme-beige h3,
+  html.bvi-active.bvi-theme-beige h4,
+  html.bvi-active.bvi-theme-beige h5,
+  html.bvi-active.bvi-theme-beige h6,
+  html.bvi-active.bvi-theme-beige p,
+  html.bvi-active.bvi-theme-beige li,
+  html.bvi-active.bvi-theme-beige td,
+  html.bvi-active.bvi-theme-beige th {
+    color: #4d3b2b !important;
+    text-shadow: none !important;
+  }
+  html.bvi-active.bvi-theme-beige a:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    color: #2b1808 !important;
+    text-decoration: underline !important;
+  }
+  html.bvi-active.bvi-theme-beige .t-btn,
+  html.bvi-active.bvi-theme-beige a.tn-atom,
+  html.bvi-active.bvi-theme-beige .tn-atom__btn,
+  html.bvi-active.bvi-theme-beige button:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-beige input:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-beige select:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    background-color: #f7f3e8 !important;
+    color: #4d3b2b !important;
+    border: 2px solid #4d3b2b !important;
+    box-shadow: none !important;
+  }
+
+  /* Схема 5: Черным по желтому (yellow) */
+  html.bvi-active.bvi-theme-yellow,
+  html.bvi-active.bvi-theme-yellow body,
+  html.bvi-active.bvi-theme-yellow .t-records,
+  html.bvi-active.bvi-theme-yellow .t-rec,
+  html.bvi-active.bvi-theme-yellow .t396__artboard,
+  html.bvi-active.bvi-theme-yellow .t-container {
+    background-color: #ffff99 !important;
+    background-image: none !important;
+    color: #000000 !important;
+  }
+  html.bvi-active.bvi-theme-yellow .tn-atom,
+  html.bvi-active.bvi-theme-yellow .t-title,
+  html.bvi-active.bvi-theme-yellow .t-descr,
+  html.bvi-active.bvi-theme-yellow .t-text,
+  html.bvi-active.bvi-theme-yellow .t-name,
+  html.bvi-active.bvi-theme-yellow h1,
+  html.bvi-active.bvi-theme-yellow h2,
+  html.bvi-active.bvi-theme-yellow h3,
+  html.bvi-active.bvi-theme-yellow h4,
+  html.bvi-active.bvi-theme-yellow h5,
+  html.bvi-active.bvi-theme-yellow h6,
+  html.bvi-active.bvi-theme-yellow p,
+  html.bvi-active.bvi-theme-yellow li,
+  html.bvi-active.bvi-theme-yellow td,
+  html.bvi-active.bvi-theme-yellow th {
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+  html.bvi-active.bvi-theme-yellow a:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    color: #0000cc !important;
+    text-decoration: underline !important;
+  }
+  html.bvi-active.bvi-theme-yellow .t-btn,
+  html.bvi-active.bvi-theme-yellow a.tn-atom,
+  html.bvi-active.bvi-theme-yellow .tn-atom__btn,
+  html.bvi-active.bvi-theme-yellow button:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-yellow input:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-yellow select:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    background-color: #ffff99 !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+  }
+</style>
+
+<script id="bvi-engine">
+(function () {
+  'use strict';
+
+  var STORAGE_KEY = 'tilda_bvi_config';
+
+  var DEFAULT_CONFIG = {
+    active: false,
+    fontSize: 'normal',
+    theme: 'white',
+    images: 'on',
+    fontFamily: 'sans',
+    spacing: 'normal',
+    lineHeight: 'normal',
+    speech: false
+  };
+
+  function loadConfig() {
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        var parsed = JSON.parse(saved);
+        return Object.assign({}, DEFAULT_CONFIG, parsed);
+      }
+    } catch (e) {}
+    return Object.assign({}, DEFAULT_CONFIG);
+  }
+
+  function saveConfig(cfg) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cfg));
+    } catch (e) {}
+  }
+
+  var config = loadConfig();
+
+  function applyClasses() {
+    var root = document.documentElement;
+    if (config.active) {
+      root.classList.add('bvi-active');
+    } else {
+      root.classList.remove('bvi-active');
+      return;
+    }
+
+    var toRemove = [];
+    for (var i = 0; i < root.classList.length; i++) {
+      var c = root.classList[i];
+      if (c.indexOf('bvi-font-') === 0 ||
+          c.indexOf('bvi-theme-') === 0 ||
+          c.indexOf('bvi-images-') === 0 ||
+          c.indexOf('bvi-family-') === 0 ||
+          c.indexOf('bvi-spacing-') === 0 ||
+          c.indexOf('bvi-line-') === 0) {
+        toRemove.push(c);
+      }
+    }
+    toRemove.forEach(function (c) { root.classList.remove(c); });
+
+    root.classList.add('bvi-font-' + config.fontSize);
+    root.classList.add('bvi-theme-' + config.theme);
+    root.classList.add('bvi-images-' + config.images);
+    root.classList.add('bvi-family-' + config.fontFamily);
+    root.classList.add('bvi-spacing-' + config.spacing);
+    root.classList.add('bvi-line-' + config.lineHeight);
+
+    updatePanelButtons();
+  }
+
+  if (config.active) {
+    document.documentElement.classList.add('bvi-active');
+    document.documentElement.classList.add('bvi-font-' + config.fontSize);
+    document.documentElement.classList.add('bvi-theme-' + config.theme);
+    document.documentElement.classList.add('bvi-images-' + config.images);
+    document.documentElement.classList.add('bvi-family-' + config.fontFamily);
+    document.documentElement.classList.add('bvi-spacing-' + config.spacing);
+    document.documentElement.classList.add('bvi-line-' + config.lineHeight);
+  }
+
+  function initDOM() {
+    if (document.getElementById('bvi-panel')) return;
+
+    // Плавающая кнопка переключения
+    var trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'bvi-trigger-btn';
+    trigger.setAttribute('aria-label', 'Включить версию сайта для слабовидящих');
+    trigger.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg><span>Версия для слабовидящих</span>';
+    trigger.addEventListener('click', function () {
+      config.active = true;
+      saveConfig(config);
+      applyClasses();
+    });
+    document.body.appendChild(trigger);
+
+    // Панель настроек
+    var panel = document.createElement('div');
+    panel.id = 'bvi-panel';
+    panel.setAttribute('role', 'region');
+    panel.setAttribute('aria-label', 'Панель настроек доступности для слабовидящих');
+    panel.innerHTML = [
+      '<div class="bvi-panel-inner">',
+      '  <div class="bvi-group" role="group" aria-label="Размер шрифта">',
+      '    <span class="bvi-label">Шрифт:</span>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="fontSize" data-bvi-val="normal" title="Стандартный размер">А</button>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="fontSize" data-bvi-val="medium" title="Увеличенный размер (120%)" style="font-size:16px;">А+</button>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="fontSize" data-bvi-val="large" title="Большой размер (140%)" style="font-size:19px;">А++</button>',
+      '  </div>',
+      '  <div class="bvi-group" role="group" aria-label="Цветовая схема">',
+      '    <span class="bvi-label">Цвет:</span>',
+      '    <button type="button" class="bvi-btn bvi-theme-btn bvi-theme-btn-white" data-bvi-set="theme" data-bvi-val="white" title="Черным по белому">Ц</button>',
+      '    <button type="button" class="bvi-btn bvi-theme-btn bvi-theme-btn-black" data-bvi-set="theme" data-bvi-val="black" title="Белым по черному">Ц</button>',
+      '    <button type="button" class="bvi-btn bvi-theme-btn bvi-theme-btn-blue" data-bvi-set="theme" data-bvi-val="blue" title="Темно-синим по голубому">Ц</button>',
+      '    <button type="button" class="bvi-btn bvi-theme-btn bvi-theme-btn-beige" data-bvi-set="theme" data-bvi-val="beige" title="Коричневым по бежевому">Ц</button>',
+      '    <button type="button" class="bvi-btn bvi-theme-btn bvi-theme-btn-yellow" data-bvi-set="theme" data-bvi-val="yellow" title="Черным по желтому">Ц</button>',
+      '  </div>',
+      '  <div class="bvi-group" role="group" aria-label="Изображения">',
+      '    <span class="bvi-label">Картинки:</span>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="images" data-bvi-val="on" title="Цветные изображения">Вкл</button>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="images" data-bvi-val="grayscale" title="Черно-белые изображения">Ч/Б</button>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="images" data-bvi-val="off" title="Выключить изображения">Выкл</button>',
+      '  </div>',
+      '  <div class="bvi-group" role="group" aria-label="Гарнитура шрифта">',
+      '    <span class="bvi-label">Гарнитура:</span>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="fontFamily" data-bvi-val="sans" title="Без засечек (Arial)">Без засечек</button>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="fontFamily" data-bvi-val="serif" title="С засечками (Times New Roman)">С засечками</button>',
+      '  </div>',
+      '  <div class="bvi-group" role="group" aria-label="Межстрочный интервал">',
+      '    <span class="bvi-label">Интервал:</span>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="lineHeight" data-bvi-val="normal" title="Стандартный интервал">1.4x</button>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="lineHeight" data-bvi-val="medium" title="Средний интервал">1.7x</button>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="lineHeight" data-bvi-val="large" title="Большой интервал">2.0x</button>',
+      '  </div>',
+      '  <div class="bvi-group" role="group" aria-label="Межбуквенный интервал">',
+      '    <span class="bvi-label">Кернинг:</span>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="spacing" data-bvi-val="normal" title="Стандартный">Стандарт</button>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="spacing" data-bvi-val="medium" title="Средний">+1px</button>',
+      '    <button type="button" class="bvi-btn" data-bvi-set="spacing" data-bvi-val="large" title="Большой">+2px</button>',
+      '  </div>',
+      '  <div class="bvi-group" role="group" aria-label="Синтезатор речи">',
+      '    <button type="button" class="bvi-btn" id="bvi-speech-toggle" title="Озвучивать текст при клике или выделении">🔊 Голос: <span id="bvi-speech-status">Выкл</span></button>',
+      '  </div>',
+      '  <div class="bvi-group">',
+      '    <button type="button" class="bvi-btn bvi-btn-close" id="bvi-close-btn" title="Вернуться к обычной версии сайта">Обычная версия сайта</button>',
+      '  </div>',
+      '</div>'
+    ].join('\n');
+
+    document.body.insertBefore(panel, document.body.firstChild);
+
+    var speechInd = document.createElement('div');
+    speechInd.id = 'bvi-speech-indicator';
+    speechInd.innerHTML = '<span>🔊 Идет чтение текста...</span><button type="button" id="bvi-speech-stop">Остановить</button>';
+    document.body.appendChild(speechInd);
+
+    panel.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-bvi-set]');
+      if (btn) {
+        var prop = btn.getAttribute('data-bvi-set');
+        var val = btn.getAttribute('data-bvi-val');
+        config[prop] = val;
+        saveConfig(config);
+        applyClasses();
+        return;
+      }
+
+      if (e.target.closest('#bvi-close-btn')) {
+        config.active = false;
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
+        saveConfig(config);
+        applyClasses();
+        return;
+      }
+
+      if (e.target.closest('#bvi-speech-toggle')) {
+        config.speech = !config.speech;
+        if (!config.speech && window.speechSynthesis) {
+          window.speechSynthesis.cancel();
+          speechInd.style.display = 'none';
+        }
+        saveConfig(config);
+        updatePanelButtons();
+        return;
+      }
+    });
+
+    document.getElementById('bvi-speech-stop').addEventListener('click', function () {
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      speechInd.style.display = 'none';
+      clearSpeechHighlight();
+    });
+
+    // Поддержка ссылок #bvi
+    document.addEventListener('click', function (e) {
+      var customLink = e.target.closest('[href="#bvi"], .bvi-open, [data-bvi-open]');
+      if (customLink) {
+        e.preventDefault();
+        config.active = true;
+        saveConfig(config);
+        applyClasses();
+        return;
+      }
+
+      if (!config.active || !config.speech) return;
+      if (e.target.closest('#bvi-panel') || e.target.closest('#bvi-speech-indicator')) return;
+
+      var text = '';
+      var selection = window.getSelection ? window.getSelection().toString().trim() : '';
+      var targetEl = e.target;
+
+      if (selection) {
+        text = selection;
+      } else {
+        var el = e.target.closest('p, h1, h2, h3, h4, h5, h6, li, .t-title, .t-descr, .t-text, .tn-atom, button, a');
+        if (el) {
+          text = el.innerText ? el.innerText.trim() : '';
+          targetEl = el;
+        }
+      }
+
+      if (text && window.speechSynthesis) {
+        speakText(text, targetEl);
+      }
+    });
+
+    updatePanelButtons();
+  }
+
+  function clearSpeechHighlight() {
+    var prev = document.querySelectorAll('.bvi-speech-highlight');
+    for (var i = 0; i < prev.length; i++) {
+      prev[i].classList.remove('bvi-speech-highlight');
+    }
+  }
+
+  function speakText(text, el) {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    clearSpeechHighlight();
+
+    if (el && el.classList) {
+      el.classList.add('bvi-speech-highlight');
+    }
+
+    var ind = document.getElementById('bvi-speech-indicator');
+    if (ind) ind.style.display = 'flex';
+
+    var utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'ru-RU';
+    utter.rate = 1.0;
+    utter.onend = function () {
+      if (ind) ind.style.display = 'none';
+      clearSpeechHighlight();
+    };
+    utter.onerror = function () {
+      if (ind) ind.style.display = 'none';
+      clearSpeechHighlight();
+    };
+
+    window.speechSynthesis.speak(utter);
+  }
+
+  function updatePanelButtons() {
+    var panel = document.getElementById('bvi-panel');
+    if (!panel) return;
+
+    var buttons = panel.querySelectorAll('[data-bvi-set]');
+    for (var i = 0; i < buttons.length; i++) {
+      var b = buttons[i];
+      var prop = b.getAttribute('data-bvi-set');
+      var val = b.getAttribute('data-bvi-val');
+      if (config[prop] === val) {
+        b.classList.add('bvi-active');
+      } else {
+        b.classList.remove('bvi-active');
+      }
+    }
+
+    var speechStatus = document.getElementById('bvi-speech-status');
+    var speechToggle = document.getElementById('bvi-speech-toggle');
+    if (speechStatus && speechToggle) {
+      speechStatus.textContent = config.speech ? 'Вкл' : 'Выкл';
+      if (config.speech) {
+        speechToggle.classList.add('bvi-active');
+      } else {
+        speechToggle.classList.remove('bvi-active');
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDOM);
+  } else {
+    initDOM();
+  }
+})();
+</script>

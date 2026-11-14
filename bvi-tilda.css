@@ -1,0 +1,489 @@
+/* Кнопка вызова панели доступности */
+  .bvi-trigger-btn {
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    z-index: 9999990;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #111111;
+    color: #ffffff !important;
+    border: 2px solid #ffffff;
+    border-radius: 24px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none !important;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .bvi-trigger-btn:hover {
+    background: #0044bb;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+  }
+  .bvi-trigger-btn:focus {
+    outline: 3px solid #ffcc00 !important;
+    outline-offset: 2px;
+  }
+  .bvi-trigger-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+    flex-shrink: 0;
+  }
+  @media (max-width: 600px) {
+    .bvi-trigger-btn {
+      top: 8px;
+      right: 8px;
+      padding: 6px 10px;
+      font-size: 11px;
+      gap: 5px;
+    }
+  }
+
+  html.bvi-active .bvi-trigger-btn {
+    display: none !important;
+  }
+
+  /* Панель управления доступностью */
+  #bvi-panel {
+    display: none;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f4f4f4;
+    color: #111111;
+    border-bottom: 3px solid #222222;
+    z-index: 9999999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    padding: 8px 14px;
+    line-height: 1.3;
+  }
+  html.bvi-active #bvi-panel {
+    display: block !important;
+  }
+  .bvi-panel-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 12px;
+  }
+  .bvi-group {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px 8px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .bvi-label {
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 4px;
+    color: #222222;
+  }
+  .bvi-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    border: 2px solid #777777;
+    border-radius: 4px;
+    background: #ffffff;
+    color: #111111;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    min-height: 28px;
+    transition: all 0.15s ease;
+  }
+  .bvi-btn:hover {
+    border-color: #000000;
+    background: #e9e9e9;
+  }
+  .bvi-btn:focus {
+    outline: 3px solid #0055ff !important;
+    outline-offset: 1px;
+  }
+  .bvi-btn.bvi-active {
+    background: #111111 !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+    font-weight: 700;
+  }
+  .bvi-btn-close {
+    background: #b30000 !important;
+    color: #ffffff !important;
+    border-color: #800000 !important;
+    font-weight: 700;
+  }
+  .bvi-btn-close:hover {
+    background: #800000 !important;
+  }
+
+  /* Цветовые схемы по ГОСТ */
+  .bvi-theme-btn {
+    font-weight: 700;
+    padding: 2px 8px;
+    min-width: 32px;
+  }
+  .bvi-theme-btn-white { background: #ffffff !important; color: #000000 !important; border-color: #000000 !important; }
+  .bvi-theme-btn-black { background: #000000 !important; color: #ffffff !important; border-color: #ffffff !important; }
+  .bvi-theme-btn-blue  { background: #cbe2f8 !important; color: #063462 !important; border-color: #063462 !important; }
+  .bvi-theme-btn-beige { background: #f7f3e8 !important; color: #4d3b2b !important; border-color: #4d3b2b !important; }
+  .bvi-theme-btn-yellow{ background: #ffff99 !important; color: #000000 !important; border-color: #000000 !important; }
+  .bvi-theme-btn.bvi-active {
+    outline: 3px solid #0044bb !important;
+    outline-offset: 2px;
+  }
+
+  /* Озвучивание */
+  #bvi-speech-indicator {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 10000000;
+    background: #0044bb;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+    font-size: 14px;
+    font-weight: bold;
+    align-items: center;
+    gap: 12px;
+  }
+  #bvi-speech-indicator button {
+    background: #ffdd00;
+    color: #000000;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .bvi-speech-highlight {
+    background-color: #ffff55 !important;
+    color: #000000 !important;
+    outline: 3px solid #ff9900 !important;
+  }
+
+  /* Отключение анимаций */
+  html.bvi-active, html.bvi-active * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Пропорциональное масштабирование страницы */
+  html.bvi-active.bvi-font-normal .t-records {
+    zoom: 1;
+  }
+  html.bvi-active.bvi-font-medium .t-records {
+    zoom: 1.18;
+  }
+  html.bvi-active.bvi-font-large .t-records {
+    zoom: 1.36;
+  }
+
+  /* Zero Blocks: убираем только декоративные картинки подложки и фильтры */
+  html.bvi-active .t396__carrier {
+    background-image: none !important;
+  }
+  html.bvi-active .t396__filter {
+    display: none !important;
+  }
+
+  /* Интерлиньяж, кернинг и шрифт ТОЛЬКО для обычных блоков (не Zero Block!),
+     чтобы в Zero Block с абсолютными координатами текст не наезжал на соседние элементы! */
+  html.bvi-active.bvi-family-sans .t-rec:not([data-record-type="396"]),
+  html.bvi-active.bvi-family-sans .t-rec:not([data-record-type="396"]) * {
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+  html.bvi-active.bvi-family-serif .t-rec:not([data-record-type="396"]),
+  html.bvi-active.bvi-family-serif .t-rec:not([data-record-type="396"]) * {
+    font-family: "Times New Roman", Times, Georgia, serif !important;
+  }
+
+  html.bvi-active.bvi-spacing-normal .t-rec:not([data-record-type="396"]) * { letter-spacing: normal !important; }
+  html.bvi-active.bvi-spacing-medium .t-rec:not([data-record-type="396"]) * { letter-spacing: 1px !important; }
+  html.bvi-active.bvi-spacing-large .t-rec:not([data-record-type="396"]) *  { letter-spacing: 2px !important; }
+
+  html.bvi-active.bvi-line-normal .t-rec:not([data-record-type="396"]) p,
+  html.bvi-active.bvi-line-normal .t-rec:not([data-record-type="396"]) .t-descr,
+  html.bvi-active.bvi-line-normal .t-rec:not([data-record-type="396"]) .t-text,
+  html.bvi-active.bvi-line-normal .t-rec:not([data-record-type="396"]) li { line-height: 1.4 !important; }
+
+  html.bvi-active.bvi-line-medium .t-rec:not([data-record-type="396"]) p,
+  html.bvi-active.bvi-line-medium .t-rec:not([data-record-type="396"]) .t-descr,
+  html.bvi-active.bvi-line-medium .t-rec:not([data-record-type="396"]) .t-text,
+  html.bvi-active.bvi-line-medium .t-rec:not([data-record-type="396"]) li { line-height: 1.7 !important; }
+
+  html.bvi-active.bvi-line-large .t-rec:not([data-record-type="396"]) p,
+  html.bvi-active.bvi-line-large .t-rec:not([data-record-type="396"]) .t-descr,
+  html.bvi-active.bvi-line-large .t-rec:not([data-record-type="396"]) .t-text,
+  html.bvi-active.bvi-line-large .t-rec:not([data-record-type="396"]) li { line-height: 2.0 !important; }
+
+  /* Изображения */
+  html.bvi-active.bvi-images-on img,
+  html.bvi-active.bvi-images-on .t-bgimg,
+  html.bvi-active.bvi-images-on .tn-atom__img {
+    filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  html.bvi-active.bvi-images-grayscale img,
+  html.bvi-active.bvi-images-grayscale .t-bgimg,
+  html.bvi-active.bvi-images-grayscale .tn-atom__img {
+    filter: grayscale(100%) contrast(120%) !important;
+  }
+  html.bvi-active.bvi-images-off img:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-images-off .t-bgimg,
+  html.bvi-active.bvi-images-off .tn-atom__img {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* ==========================================================================
+     5 ЦВЕТОВЫХ СХЕМ ПО ГОСТ Р 52872-2019
+     Каждая секция получает сплошной цвет фона, исключая наложение!
+     ========================================================================== */
+
+  /* Схема 1: Черным по белому (white) */
+  html.bvi-active.bvi-theme-white,
+  html.bvi-active.bvi-theme-white body,
+  html.bvi-active.bvi-theme-white .t-records,
+  html.bvi-active.bvi-theme-white .t-rec,
+  html.bvi-active.bvi-theme-white .t396__artboard,
+  html.bvi-active.bvi-theme-white .t-container {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+  }
+  html.bvi-active.bvi-theme-white .tn-atom,
+  html.bvi-active.bvi-theme-white .t-title,
+  html.bvi-active.bvi-theme-white .t-descr,
+  html.bvi-active.bvi-theme-white .t-text,
+  html.bvi-active.bvi-theme-white .t-name,
+  html.bvi-active.bvi-theme-white h1,
+  html.bvi-active.bvi-theme-white h2,
+  html.bvi-active.bvi-theme-white h3,
+  html.bvi-active.bvi-theme-white h4,
+  html.bvi-active.bvi-theme-white h5,
+  html.bvi-active.bvi-theme-white h6,
+  html.bvi-active.bvi-theme-white p,
+  html.bvi-active.bvi-theme-white li,
+  html.bvi-active.bvi-theme-white td,
+  html.bvi-active.bvi-theme-white th {
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+  html.bvi-active.bvi-theme-white a:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    color: #0000cc !important;
+    text-decoration: underline !important;
+  }
+  html.bvi-active.bvi-theme-white .t-btn,
+  html.bvi-active.bvi-theme-white a.tn-atom,
+  html.bvi-active.bvi-theme-white .tn-atom__btn,
+  html.bvi-active.bvi-theme-white button:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-white input:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-white select:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+  }
+
+  /* Схема 2: Белым по черному (black) */
+  html.bvi-active.bvi-theme-black,
+  html.bvi-active.bvi-theme-black body,
+  html.bvi-active.bvi-theme-black .t-records,
+  html.bvi-active.bvi-theme-black .t-rec,
+  html.bvi-active.bvi-theme-black .t396__artboard,
+  html.bvi-active.bvi-theme-black .t-container {
+    background-color: #000000 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+  }
+  html.bvi-active.bvi-theme-black .tn-atom,
+  html.bvi-active.bvi-theme-black .t-title,
+  html.bvi-active.bvi-theme-black .t-descr,
+  html.bvi-active.bvi-theme-black .t-text,
+  html.bvi-active.bvi-theme-black .t-name,
+  html.bvi-active.bvi-theme-black h1,
+  html.bvi-active.bvi-theme-black h2,
+  html.bvi-active.bvi-theme-black h3,
+  html.bvi-active.bvi-theme-black h4,
+  html.bvi-active.bvi-theme-black h5,
+  html.bvi-active.bvi-theme-black h6,
+  html.bvi-active.bvi-theme-black p,
+  html.bvi-active.bvi-theme-black li,
+  html.bvi-active.bvi-theme-black td,
+  html.bvi-active.bvi-theme-black th {
+    color: #ffffff !important;
+    text-shadow: none !important;
+  }
+  html.bvi-active.bvi-theme-black a:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    color: #ffff00 !important;
+    text-decoration: underline !important;
+  }
+  html.bvi-active.bvi-theme-black .t-btn,
+  html.bvi-active.bvi-theme-black a.tn-atom,
+  html.bvi-active.bvi-theme-black .tn-atom__btn,
+  html.bvi-active.bvi-theme-black button:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-black input:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-black select:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  /* Схема 3: Темно-синим по голубому (blue) */
+  html.bvi-active.bvi-theme-blue,
+  html.bvi-active.bvi-theme-blue body,
+  html.bvi-active.bvi-theme-blue .t-records,
+  html.bvi-active.bvi-theme-blue .t-rec,
+  html.bvi-active.bvi-theme-blue .t396__artboard,
+  html.bvi-active.bvi-theme-blue .t-container {
+    background-color: #cbe2f8 !important;
+    background-image: none !important;
+    color: #063462 !important;
+  }
+  html.bvi-active.bvi-theme-blue .tn-atom,
+  html.bvi-active.bvi-theme-blue .t-title,
+  html.bvi-active.bvi-theme-blue .t-descr,
+  html.bvi-active.bvi-theme-blue .t-text,
+  html.bvi-active.bvi-theme-blue .t-name,
+  html.bvi-active.bvi-theme-blue h1,
+  html.bvi-active.bvi-theme-blue h2,
+  html.bvi-active.bvi-theme-blue h3,
+  html.bvi-active.bvi-theme-blue h4,
+  html.bvi-active.bvi-theme-blue h5,
+  html.bvi-active.bvi-theme-blue h6,
+  html.bvi-active.bvi-theme-blue p,
+  html.bvi-active.bvi-theme-blue li,
+  html.bvi-active.bvi-theme-blue td,
+  html.bvi-active.bvi-theme-blue th {
+    color: #063462 !important;
+    text-shadow: none !important;
+  }
+  html.bvi-active.bvi-theme-blue a:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    color: #001f3f !important;
+    text-decoration: underline !important;
+  }
+  html.bvi-active.bvi-theme-blue .t-btn,
+  html.bvi-active.bvi-theme-blue a.tn-atom,
+  html.bvi-active.bvi-theme-blue .tn-atom__btn,
+  html.bvi-active.bvi-theme-blue button:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-blue input:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-blue select:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    background-color: #cbe2f8 !important;
+    color: #063462 !important;
+    border: 2px solid #063462 !important;
+    box-shadow: none !important;
+  }
+
+  /* Схема 4: Коричневым по бежевому (beige) */
+  html.bvi-active.bvi-theme-beige,
+  html.bvi-active.bvi-theme-beige body,
+  html.bvi-active.bvi-theme-beige .t-records,
+  html.bvi-active.bvi-theme-beige .t-rec,
+  html.bvi-active.bvi-theme-beige .t396__artboard,
+  html.bvi-active.bvi-theme-beige .t-container {
+    background-color: #f7f3e8 !important;
+    background-image: none !important;
+    color: #4d3b2b !important;
+  }
+  html.bvi-active.bvi-theme-beige .tn-atom,
+  html.bvi-active.bvi-theme-beige .t-title,
+  html.bvi-active.bvi-theme-beige .t-descr,
+  html.bvi-active.bvi-theme-beige .t-text,
+  html.bvi-active.bvi-theme-beige .t-name,
+  html.bvi-active.bvi-theme-beige h1,
+  html.bvi-active.bvi-theme-beige h2,
+  html.bvi-active.bvi-theme-beige h3,
+  html.bvi-active.bvi-theme-beige h4,
+  html.bvi-active.bvi-theme-beige h5,
+  html.bvi-active.bvi-theme-beige h6,
+  html.bvi-active.bvi-theme-beige p,
+  html.bvi-active.bvi-theme-beige li,
+  html.bvi-active.bvi-theme-beige td,
+  html.bvi-active.bvi-theme-beige th {
+    color: #4d3b2b !important;
+    text-shadow: none !important;
+  }
+  html.bvi-active.bvi-theme-beige a:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    color: #2b1808 !important;
+    text-decoration: underline !important;
+  }
+  html.bvi-active.bvi-theme-beige .t-btn,
+  html.bvi-active.bvi-theme-beige a.tn-atom,
+  html.bvi-active.bvi-theme-beige .tn-atom__btn,
+  html.bvi-active.bvi-theme-beige button:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-beige input:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-beige select:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    background-color: #f7f3e8 !important;
+    color: #4d3b2b !important;
+    border: 2px solid #4d3b2b !important;
+    box-shadow: none !important;
+  }
+
+  /* Схема 5: Черным по желтому (yellow) */
+  html.bvi-active.bvi-theme-yellow,
+  html.bvi-active.bvi-theme-yellow body,
+  html.bvi-active.bvi-theme-yellow .t-records,
+  html.bvi-active.bvi-theme-yellow .t-rec,
+  html.bvi-active.bvi-theme-yellow .t396__artboard,
+  html.bvi-active.bvi-theme-yellow .t-container {
+    background-color: #ffff99 !important;
+    background-image: none !important;
+    color: #000000 !important;
+  }
+  html.bvi-active.bvi-theme-yellow .tn-atom,
+  html.bvi-active.bvi-theme-yellow .t-title,
+  html.bvi-active.bvi-theme-yellow .t-descr,
+  html.bvi-active.bvi-theme-yellow .t-text,
+  html.bvi-active.bvi-theme-yellow .t-name,
+  html.bvi-active.bvi-theme-yellow h1,
+  html.bvi-active.bvi-theme-yellow h2,
+  html.bvi-active.bvi-theme-yellow h3,
+  html.bvi-active.bvi-theme-yellow h4,
+  html.bvi-active.bvi-theme-yellow h5,
+  html.bvi-active.bvi-theme-yellow h6,
+  html.bvi-active.bvi-theme-yellow p,
+  html.bvi-active.bvi-theme-yellow li,
+  html.bvi-active.bvi-theme-yellow td,
+  html.bvi-active.bvi-theme-yellow th {
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+  html.bvi-active.bvi-theme-yellow a:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    color: #0000cc !important;
+    text-decoration: underline !important;
+  }
+  html.bvi-active.bvi-theme-yellow .t-btn,
+  html.bvi-active.bvi-theme-yellow a.tn-atom,
+  html.bvi-active.bvi-theme-yellow .tn-atom__btn,
+  html.bvi-active.bvi-theme-yellow button:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-yellow input:not(#bvi-panel *):not(.bvi-trigger-btn *),
+  html.bvi-active.bvi-theme-yellow select:not(#bvi-panel *):not(.bvi-trigger-btn *) {
+    background-color: #ffff99 !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+  }
